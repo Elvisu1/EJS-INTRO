@@ -1,0 +1,36 @@
+<%- include('../partials/head') %>
+  <!-- we get data {title: Books page, books: [all books array]} -->
+
+  <!-- include header -->
+  <%- include('../partials/header') %>
+
+    <main class="container">
+      <!-- if msg is set, display it as a mesage confirming success -->
+      <% if (locals.feedback && feedback.error) { %>
+        <div class="feedback error ">
+          <%= feedback.error %>
+        </div>
+        <% } %>
+          <h1>Welcome to our books page</h1>
+          <hr>
+
+          <h3>Our current books List </h3>
+          <!-- loop to get all books titles -->
+          <ol class="books-list">
+            <% if (books.length===0) { %>
+              <h5>There are no books found</h5>
+              <% } %>
+                <% books.forEach(book=> { %>
+                  <li>
+                    <%- `<strong>Title:</strong> ${book.title} - Written by: ${book.author}` %>
+                  </li>
+                  <% }) %>
+          </ol>
+          <hr>
+
+          <h3>Our books in card form</h3>
+
+
+    </main>
+
+    <%- include('../partials/footer') %>

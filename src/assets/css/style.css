@@ -1,0 +1,77 @@
+/* Reset */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* Comon */
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.card {
+  max-width: 30%;
+  display: inline-block;
+  padding: 1rem 2rem;
+  border: 1px solid #000;
+  margin: 1rem;
+  box-shadow: 5px 5px 10px gray;
+}
+
+nav {
+  background-color: #333;
+  color: snow;
+}
+.nav-link {
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  color: white;
+  display: inline-block;
+}
+
+.nav-link.active {
+  /* font-weight: bold; */
+  text-decoration: underline;
+  color: rgb(222, 222, 222);
+}
+
+.cart_title {
+  margin: 1rem;
+}
+
+footer {
+  text-align: center;
+}
+
+.feedback {
+  position: fixed;
+  min-width: 50%;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  border: 1px solid #000;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 3px 3px 10px gray;
+}
+
+.feedback.error {
+  border-color: tomato;
+  background-color: rgb(254, 209, 201);
+  box-shadow: 3px 3px 10px rgb(254, 209, 201);
+}
+.feedback.success {
+  border-color: green;
+  background-color: rgb(202, 228, 202);
+  box-shadow: 3px 3px 10px rgb(96, 133, 96);
+}

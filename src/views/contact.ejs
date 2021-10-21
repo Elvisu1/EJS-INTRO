@@ -1,0 +1,16 @@
+<%- include('partials/head') %>
+  <!-- include header -->
+  <%- include('partials/header') %>
+
+    <main class="container">
+
+      <h1>Contact us</h1>
+
+      <!-- component like way to generate elements -->
+      <% users.forEach(u=> { %>
+        <%- include('components/card', u ) %>
+          <% }) %>
+    </main>
+
+
+    <%- include('partials/footer') %>

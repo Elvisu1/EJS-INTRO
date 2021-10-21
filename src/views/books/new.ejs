@@ -1,0 +1,43 @@
+<%- include('../partials/head') %>
+  <!-- we get data {title: Books page, categories: [] } -->
+
+  <!-- include header -->
+  <%- include('../partials/header') %>
+
+    <main class="container">
+      <!-- if msg is set, display it as a mesage confirming success -->
+      <% if (locals.feedback && feedback.error) { %>
+        <div class="feedback error ">
+          <%= feedback.error %>
+        </div>
+        <% } else if(locals.feedback && feedback.msg) { %>
+          <div class="feedback success ">
+            <%= feedback.msg %>
+          </div>
+          <% } %>
+            <!-- <div class="feedback error"> This is a error </div> -->
+            <h1>Add new book</h1>
+
+            <form action='/books/new' method="post">
+              <input type="text" name="title" value='Best book' placeholder="Enter title"> <br>
+              <input type="text" name="author" value='Mike Tyson' placeholder="Enter author"> <br>
+              <input type="number" name="year" value='2015' placeholder="Enter year"> <br>
+              <select name="category" id="category">
+                <option selected value="0">Select category</option>
+                <!-- make options from categories array -->
+                <% locals.categories && categories.forEach(({id, cat_name})=> { %>
+                  <option value="<%= id %>">
+                    <%= cat_name %>
+                  </option>
+                  <% }) %>
+
+              </select>
+              <label for="category">Select category</label> <br> <br>
+
+              <button type="submit">Create</button>
+
+            </form>
+
+    </main>
+
+    <%- include('../partials/footer') %>

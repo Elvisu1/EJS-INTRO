@@ -1,0 +1,26 @@
+<%- include('partials/head') %>
+
+
+  <!-- include header -->
+  <%- include('partials/header') %>
+
+    <main class="container">
+
+
+      <h1>Welcome About Ejs</h1>
+      <p>All started years ago</p>
+
+      <h3>Best points</h3>
+      <ul>
+        <% points && points.forEach(el=> { %>
+          <li>
+            <h5 class="someClass">
+              <%= el %>
+            </h5>
+          </li>
+
+          <% }) %>
+      </ul>
+    </main>
+
+    <%- include('partials/footer') %>

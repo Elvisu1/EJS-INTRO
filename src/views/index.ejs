@@ -1,0 +1,21 @@
+<%- include('partials/head') %>
+
+  <% const user='James' %>
+    <!-- seen -->
+    <%# not seen comment in ejs %>
+
+      <!-- include header -->
+      <%- include('partials/header') %>
+
+        <main class="container">
+          <h1>Welcome to Ejs</h1>
+          <p>This is how ssr works</p>
+          <h2>
+            <%= 60 * 50 %>
+          </h2>
+          <h3>
+            <%= user %>
+          </h3>
+        </main>
+
+        <%- include('partials/footer') %>

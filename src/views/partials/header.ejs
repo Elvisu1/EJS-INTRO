@@ -1,0 +1,12 @@
+<header>
+  <nav class="container">
+    <a class="nav-link <%= locals.currentPage && currentPage === 'home' ? 'active' : ''  %> " href="/">Home</a>
+    <a class="nav-link <%= locals.currentPage && currentPage === 'about' ? 'active' : ''  %>  " href="/about">About</a>
+    <a class="nav-link" href="/contact">Contact us</a>
+    <a class="nav-link" href="/layout">Layout</a>
+    <a class="nav-link <%= locals.currentPage && currentPage === 'books' ? 'active' : ''  %> " href="/books">Our
+      books</a>
+    <a class="nav-link <%= locals.currentPage && currentPage === 'booksNew' ? 'active' : ''  %> " href="/books/new">Add
+      book</a>
+  </nav>
+</header>
