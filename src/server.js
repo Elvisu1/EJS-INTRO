@@ -23,31 +23,6 @@ const staticPath = path.join(__dirname, 'assets');
 // console.log('staticPath', staticPath);
 app.use(express.static(staticPath));
 
-app.get('/about', (req, res) => {
-  // got to db, fetch data
-  const points = ['Html', 'Css', 'Js'];
-  const isLoggedIn = true;
-  if (!isLoggedIn) {
-    return res.status(403).send('Forbiden, please log in');
-  }
-  // pass data
-  res.render('about', {
-    points: points,
-    title: 'About Us All',
-    currentPage: 'about',
-  });
-});
-
-// const users = require('./db/users');
-// console.log('users', users);
-app.get('/contact', (req, res) => {
-  res.render('contact', { title: 'Contact us today', users });
-});
-
-app.get('/layout', (req, res) => {
-  res.render('mainLayout', { title: 'layout', asideOn: true });
-});
-
 const booksRoutes = require('./routes/v1/booksRoutes');
 const pagesRoutes = require('./routes/v1/pagesRoutes');
 
